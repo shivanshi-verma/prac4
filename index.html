@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Park Entry Form</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  select:focus, button:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  
+  
+form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  
+  select, button {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+</style>
+</head>
+<body>
+<h2>Theme Park Entry Form</h2>
+<form id="entryForm" onsubmit="return validateForm()">
+  <label for="ageCategory">Age Category:</label>
+  <select id="ageCategory" name="ageCategory" onchange="validateAgeCategory()">
+    <option value="">Select Age Category</option>
+    <option value="child">Child</option>
+    <option value="adult">Adult</option>
+    <option value="senior">Senior</option>
+  </select>
+  <span id="ageError" class="error"></span>
+  <br><br>
+  
+  <label for="entryCategory">Entry Category:</label>
+  <select id="entryCategory" name="entryCategory">
+    <option value="">Select Entry Category</option>
+    <option value="college">College</option>
+    <option value="family">Family</option>
+  </select>
+  <span id="entryError" class="error"></span>
+  <br><br>
+  
+  <button type="submit">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
